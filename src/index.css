@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --no-of-slides: 6;
+  --slides-in-view: 5;
+  --slide-width: 250px;
+  --margin: 40px;
+  --slide-width-w-margin: 290px;
+  --custom-width: 200px;
+  --slide-height: 200px;
+  --iteration-time: 60s;
+}
+
+.social-icon {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icon a {
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid #fff;
+}
+.social-icon a::before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+.social-icon a img {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.social-icon a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
+    hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.chonkybanner {
+  padding-top: 50px;
+}
+
+.chonkybanner h1 {
+  font-size: 10rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.chonkybanner::before,
+.chonkybanner::after {
+  content: "";
+  padding-top: 50px;
+  background-color: red;
+  width: 50px;
+  height: 100px;
+}
+
+.chonkybanner span,
+h1 {
+  color: #ffffff !important;
+}
+
+.chonkybanner span,
+h3 {
+  color: #ffad7e !important;
+}
+
+#chonky-logo {
+  animation: updown 3s linear infinite;
+  width: 400px;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.avatar {
+  width: 100%;
+}
+
+.card {
+  &:hover {
+    transition-duration: 150ms;
+    transform: scale(1.1);
+    box-shadow: 5px 5px 8px rgba(222, 222, 222, 0.362),
+      8px 8px 5px rgba(152, 133, 133, 0.392);
+  }
+  border: 4px solid #ccc !important;
+  background-color: #0a0e15 !important;
+  margin: var(--margin);
+
+  flex: 0 0 auto;
+  width: var(--slide-width);
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: calc(2 * var(--no-of-slides));
+  margin: 80px 0;
+}
+
+.carousel-track {
+  width: calc(var(--slides-in-view) * var(--slide-width-w-margin));
+  animation: slide var(--iteration-time) linear infinite;
+  display: flex;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(var(--slide-width-w-margin) * var(--no-of-slides) * -1)
+    );
+  }
+}
+
+.leftrightchonkbanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #ddd;
+}
+
+.description {
+  color: #a8a8a8;
+}
+
+.details {
+  padding: 10px;
+}
+
+.details p {
+  margin-top: 5px;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  color: #252525;
+  font-weight: 400;
+  background-color: #2f1006 !important;
+  border-bottom: 1.6rem solid #fffbda;
+  min-height: 100vh;
+  padding: 3.2rem;
+}
+
+/* .container {
+  max-width: 80rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+} */
+
+/* *************** */
+
+.loader {
+  position: fixed;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  align-self: stretch;
+  margin-bottom: 30px;
+}
+
+.header h3 {
+  text-align: center;
+}
+
+.header h1 {
+  /* Non-accessible color */
+  color: #e8e7de !important;
+  /* color: #af8602; */
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5.2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.header h1::before,
+.header h1::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 12rem;
+  background-color: #66ccbe;
+  position: absolute;
+  top: calc(50%);
+}
+
+@media screen and (max-width: 500px) {
+  .chonkybanner h1 {
+    font-size: 5rem;
+  }
+
+  #chonky-logo {
+    padding-top: 20px;
+    width: 200px;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header h1::before,
+  .header h1::after {
+    width: 2rem;
+  } /* hide it elsewhere */
+}
+
+.header h1::before {
+  left: 0;
+}
+
+.header h1::after {
+  right: 0;
+}
+
+.banner {
+  color: #beefe8;
+  text-align: center;
+}
+
+.banner h4 {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #beefe8;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+/* *************** */
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.btn {
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #edc84b;
+  padding: 1.4rem 3.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #e9bb24;
+}
