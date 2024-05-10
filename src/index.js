@@ -78,7 +78,7 @@ function Bannerz() {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h1>
+                  <h1 style={{ margin: "20px", textAlign: "center" }}>
                     A Russian <br />
                     Purr-sonality!
                   </h1>
