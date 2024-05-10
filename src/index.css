@@ -178,8 +178,8 @@ body {
   font-family: "Roboto Mono", sans-serif;
   color: #252525;
   font-weight: 400;
-  background-color: #2f1006 !important;
-  border-bottom: 1.6rem solid #fffbda;
+  background-color: #340f04 !important;
+  border-bottom: 1.6rem solid #fff;
   min-height: 100vh;
   padding: 3.2rem;
 }
@@ -235,7 +235,7 @@ body {
   content: "";
   height: 3px;
   width: 12rem;
-  background-color: #66ccbe;
+  background-color: #fff;
   position: absolute;
   top: calc(50%);
 }
